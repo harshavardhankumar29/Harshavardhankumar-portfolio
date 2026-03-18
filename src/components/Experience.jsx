@@ -10,24 +10,22 @@ const experiences = [
             "Customized and structured a responsive WordPress website, including theme modifications, layout and SEO configuration.",
             "Configured essential plugins for contact forms, navigation flow, and performance optimization to enhance overall user interaction.",
             "Transformed the WordPress website into an Android application using Android Studio while preserving content hierarchy and structural consistency."
-        ]
+        ],
+        skills: ["WordPress", "Android Studio", "SEO", "UI/UX"]
     }
 ];
 
 export default function Experience() {
     return (
-        <section id="experience" className="py-32 px-6 md:px-12 relative z-10 bg-black text-white border-t border-white/5">
+        <section id="experience" className="pb-12 pt-4 relative z-10 w-full">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-16"
+                    className="mb-8"
                 >
-                    <h2 className="text-4xl font-bold tracking-tighter mb-4">Experience</h2>
-                    <p className="text-gray-400 max-w-xl">
-                        My professional journey and internships.
-                    </p>
+                    <h2 className="text-4xl lg:text-5xl font-bold tracking-tighter mb-2 text-accent"><span className="text-zinc-600">MY</span> EXPERIENCE</h2>
                 </motion.div>
 
                 <div className="space-y-12">
@@ -50,7 +48,7 @@ export default function Experience() {
                                         <h3 className="text-2xl font-bold text-white group-hover:text-accent transition-colors">{exp.role}</h3>
                                         <p className="text-xl text-gray-400">{exp.company}</p>
                                     </div>
-                                    <span className="text-sm font-mono text-gray-500 bg-white/5 px-4 py-2 rounded-full border border-white/10 w-fit">
+                                    <span className="text-sm font-mono text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10 w-fit">
                                         {exp.period}
                                     </span>
                                 </div>
@@ -63,6 +61,18 @@ export default function Experience() {
                                         </li>
                                     ))}
                                 </ul>
+
+                                {/* Skill Tags */}
+                                <div className="mt-8 flex flex-wrap gap-2 pt-6 border-t border-white/5">
+                                    {exp.skills.map((skill, sIdx) => (
+                                        <span 
+                                            key={sIdx}
+                                            className="px-3 py-1 bg-black rounded-lg text-xs font-medium text-gray-300 border border-white/10 hover:border-accent/50 hover:text-accent cursor-default transition-colors"
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </motion.div>
                     ))}

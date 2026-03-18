@@ -1,9 +1,12 @@
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import ProfileSidebar from './components/ProfileSidebar';
 import Work from './components/Work';
 import Skills from './components/Skills';
 import About from './components/About';
 import Experience from './components/Experience';
+import Education from './components/Education';
+import Achievements from './components/Achievements';
+import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import SplineBackground from './components/SplineBackground';
 import Footer from './components/Footer';
@@ -21,13 +24,24 @@ function App() {
         <MusicPlayer />
         <SplineBackground />
         <Navbar />
-        <main>
-          <Hero />
-          <Work />
-          <Skills />
-          <About />
-          <Experience />
-          <Contact />
+        <main className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-[5%] pt-32 px-6 lg:px-12 relative z-10 pb-32">
+          {/* Left Sidebar */}
+          <div className="w-full lg:w-1/3 xl:w-1/4">
+             <div className="sticky top-32">
+                 <ProfileSidebar />
+             </div>
+          </div>
+          {/* Right Scrollable Area */}
+          <div className="w-full lg:w-2/3 xl:w-3/4 flex flex-col gap-8 mt-16 lg:mt-0">
+            <Work />
+            <Experience />
+            <Education />
+            <Skills />
+            <Achievements />
+            <Certifications />
+            <About />
+            <Contact />
+          </div>
         </main>
         <Footer />
       </div>

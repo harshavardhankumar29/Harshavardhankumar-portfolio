@@ -12,7 +12,7 @@
 
   html,
   body {
-    @apply bg-black text-white antialiased overflow-x-hidden;
+    @apply bg-black text-white antialiased overflow-x-clip;
     background-color: #000000;
   }
 

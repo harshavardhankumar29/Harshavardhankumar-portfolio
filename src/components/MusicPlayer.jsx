@@ -63,7 +63,7 @@ export default function MusicPlayer() {
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`fixed bottom-6 left-6 z-50 transition-all duration-300 ${isMinimized ? 'w-12 h-12' : 'w-80'}`}
+            className={`fixed bottom-6 left-6 z-50 transition-all duration-300 ${isMinimized ? 'w-12 h-12' : 'w-[calc(100vw-3rem)] sm:w-80'}`}
         >
             <div className="relative bg-black/40 backdrop-blur-xl border border-white/10 rounded-full overflow-hidden shadow-2xl ring-1 ring-white/5">
 
@@ -112,15 +112,14 @@ export default function MusicPlayer() {
                             <p className="text-[10px] text-gray-400 truncate">{playlist[currentTrack].artist}</p>
                         </div>
 
-                        {/* Controls */}
-                        <div className="flex items-center gap-2">
-                            <button onClick={handlePrev} className="text-gray-400 hover:text-white transition-colors">
+                        <div className="flex items-center gap-1 sm:gap-2">
+                            <button onClick={handlePrev} className="text-gray-400 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none rounded-sm p-1">
                                 <SkipBack className="w-4 h-4" />
                             </button>
-                            <button onClick={togglePlay} className="text-white hover:text-accent transition-colors p-1">
+                            <button onClick={togglePlay} className="text-white hover:text-accent transition-colors p-1 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none rounded-full">
                                 {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                             </button>
-                            <button onClick={handleNext} className="text-gray-400 hover:text-white transition-colors">
+                            <button onClick={handleNext} className="text-gray-400 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none rounded-sm p-1">
                                 <SkipForward className="w-4 h-4" />
                             </button>
                         </div>
@@ -128,7 +127,7 @@ export default function MusicPlayer() {
                         {/* Minimize */}
                         <button
                             onClick={() => setIsMinimized(true)}
-                            className="text-gray-500 hover:text-white transition-colors ml-1"
+                            className="text-gray-400 hover:text-white transition-colors ml-1 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none rounded-sm p-1"
                         >
                             <Minimize2 className="w-3 h-3" />
                         </button>
