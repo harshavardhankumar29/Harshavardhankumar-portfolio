@@ -9,7 +9,7 @@ export default function ProfileSidebar() {
         "AI/ML Enthusiast",
         "Problem Solver"
     ];
-    
+
     const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
     useEffect(() => {
@@ -20,25 +20,34 @@ export default function ProfileSidebar() {
     }, [roles.length]);
 
     return (
-        <motion.div 
+        <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full bg-[#111] rounded-[2rem] p-8 border border-white/5 flex flex-col items-center text-center shadow-2xl"
+            className="w-full bg-zinc-900/40 backdrop-blur-md rounded-[2rem] p-8 border border-white/10 flex flex-col items-center text-center shadow-2xl"
         >
             {/* Stylized Avatar */}
-            <div className="relative w-48 h-48 mb-8 rounded-3xl overflow-hidden bg-zinc-900 border border-white/10 group">
-                <div className="absolute inset-0 bg-white/5 blur-xl group-hover:bg-white/10 transition-colors duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center text-6xl font-black text-white/20 group-hover:text-white transition-colors duration-500">
-                    HK
+            <div className="relative w-48 h-48 mb-8 rounded-3xl overflow-hidden bg-black border border-white/10 group shadow-[0_0_30px_-10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_-5px_var(--accent-color)] transition-shadow duration-500">
+                <img 
+                    src="/profile.png" 
+                    alt="Harsha Vardhan Kumar" 
+                    className="w-full h-full object-cover object-top filter contrast-125 brightness-90 group-hover:scale-105 transition-transform duration-700 relative z-10"
+                    onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextElementSibling.style.display = 'flex';
+                    }}
+                />
+                <div className="absolute inset-0 hidden flex-col items-center justify-center text-6xl font-black text-white/20 group-hover:text-white transition-colors duration-500 z-0">
+
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-20 pointer-events-none" />
             </div>
 
             {/* Name & Animated Title */}
             <h1 className="text-4xl lg:text-5xl font-black tracking-tighter uppercase mb-4 text-accent">
                 Harsha Vardhan <br />Kumar
             </h1>
-            
+
             <div className="h-8 mb-6 overflow-hidden relative">
                 <AnimatePresence mode="popLayout">
                     <motion.div
@@ -68,7 +77,7 @@ export default function ProfileSidebar() {
                     const Icon = social.icon;
                     return (
                         <a key={index} href={social.href} target="_blank" rel="noopener noreferrer"
-                           className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/30 hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none transition-all duration-300">
+                            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/30 hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none transition-all duration-300">
                             <Icon size={20} />
                         </a>
                     );

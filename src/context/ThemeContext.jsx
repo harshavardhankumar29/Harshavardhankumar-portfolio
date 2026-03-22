@@ -11,7 +11,10 @@ export const themes = [
 ];
 
 export function ThemeProvider({ children }) {
-    const [accentColor, setAccentColor] = useState('white');
+    const [accentColor, setAccentColor] = useState(() => {
+        const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+        return randomTheme.value;
+    });
 
     useEffect(() => {
         document.documentElement.style.setProperty('--accent-color', accentColor);

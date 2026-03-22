@@ -14,10 +14,26 @@ import CommandMenu from './components/CommandMenu';
 import ScrollProgress from './components/ScrollProgress';
 import MusicPlayer from './components/MusicPlayer';
 import { ThemeProvider } from './context/ThemeContext';
+import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading to allow Spline and other assets to initialize
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <ThemeProvider>
+      <AnimatePresence>
+        {isLoading && <LoadingScreen key="loading" />}
+      </AnimatePresence>
       <div className="relative min-h-screen bg-black text-white selection:bg-accent selection:text-black font-sans">
         <ScrollProgress />
         <CommandMenu />
@@ -33,13 +49,13 @@ function App() {
           </div>
           {/* Right Scrollable Area */}
           <div className="w-full lg:w-2/3 xl:w-3/4 flex flex-col gap-8 mt-16 lg:mt-0">
+            <About />
             <Work />
             <Experience />
             <Education />
             <Skills />
             <Achievements />
             <Certifications />
-            <About />
             <Contact />
           </div>
         </main>

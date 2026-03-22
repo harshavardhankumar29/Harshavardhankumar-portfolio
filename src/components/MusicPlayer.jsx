@@ -27,6 +27,11 @@ const playlist = [
         title: "Atmospheric Space",
         artist: "Background",
         url: "/music/space-atmospheric-background-124841.mp3"
+    },
+    {
+        title: "Rasputin",
+        artist: "Boney M",
+        url: "/music/Rasputin (PenduJatt.Com.Se).mp3"
     }
 ];
 // Note: These are sample hotlinks from Pixabay (they might expire). 

@@ -8,7 +8,8 @@ const projects = [
         description: "Real-time bed tracking with multi-role dashboards, appointment scheduling, billing, WebSocket integration & JWT auth.",
         color: "bg-emerald-500",
         link: "https://github.com/harshavardhankumar29",
-        year: "2026"
+        year: "2026",
+        image: "/projects/hospital_bed.png"
     },
     {
         title: "Code Reviewer",
@@ -16,7 +17,8 @@ const projects = [
         description: "AI-driven code analysis platform that evaluates snippets and produces structured quality suggestions via LLM API.",
         color: "bg-blue-500",
         link: "https://github.com/harshavardhankumar29/Code-Reviewer",
-        year: "2025"
+        year: "2025",
+        image: "/projects/code_reviewer.png"
     },
     {
         title: "Wanderlust",
@@ -24,7 +26,8 @@ const projects = [
         description: "Full-stack travel listing platform with session-based auth, CRUD workflows, and responsive Bootstrap UI.",
         color: "bg-orange-500",
         link: "https://github.com/harshavardhankumar29/Wanderlust",
-        year: "2024"
+        year: "2024",
+        image: "/projects/wanderlust.png"
     },
     {
         title: "Expense Splitter Bot",
@@ -32,7 +35,8 @@ const projects = [
         description: "Split group expenses effortlessly with instant fair splits and clear settlement instructions. Perfect for trips and shared bills.",
         color: "bg-purple-500",
         link: "https://github.com/harshavardhankumar29/Expense_Splitter_bot",
-        year: "2024"
+        year: "2024",
+        image: "/projects/expense_splitter.png"
     }
 ];
 
@@ -49,9 +53,12 @@ function ProjectCard({ project, index }) {
             className="group relative flex flex-col md:flex-row gap-6 p-4 rounded-3xl bg-[#0a0a0a] hover:bg-[#151515] transition-colors duration-500 border border-white/5 hover:border-white/10 cursor-pointer overflow-hidden focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
         >
             {/* Thumbnail / Graphic Background */}
-            <div className="w-full md:w-1/3 aspect-video md:aspect-[3/4] lg:aspect-video rounded-2xl overflow-hidden relative border border-white/5 bg-black z-10">
-                <div className={`absolute inset-0 ${project.color} opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
-                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] rounded-full ${project.color} blur-[80px] opacity-30 group-hover:opacity-60 transition-all duration-700 mix-blend-screen scale-50 group-hover:scale-100`} />
+            <div className="w-full md:w-1/3 aspect-video md:aspect-[3/4] lg:aspect-video rounded-2xl overflow-hidden relative border border-white/5 bg-black z-10 group-hover:border-white/10 transition-colors">
+                {project.image && (
+                    <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" />
+                )}
+                <div className={`absolute inset-0 ${project.color} opacity-20 group-hover:opacity-0 transition-opacity duration-500 mix-blend-overlay`} />
+                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] rounded-full ${project.color} blur-[80px] opacity-30 group-hover:opacity-40 transition-all duration-700 mix-blend-screen scale-50 group-hover:scale-100 pointer-events-none`} />
             </div>
 
             {/* Content Area */}
