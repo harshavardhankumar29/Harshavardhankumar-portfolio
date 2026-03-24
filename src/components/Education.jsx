@@ -32,12 +32,12 @@ export default function Education() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mb-8"
+                className="mb-6 sm:mb-8"
             >
-                <h2 className="text-4xl lg:text-5xl font-bold tracking-tighter mb-2 text-accent"><span className="text-zinc-600">MY</span> EDUCATION</h2>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold tracking-tighter mb-2 sm:mb-4 text-accent"><span className="text-zinc-600">MY</span> EDUCATION</h2>
             </motion.div>
 
-            <div className="relative border-l border-white/10 ml-4 md:ml-6 space-y-12 pb-4">
+            <div className="relative border-l border-white/10 ml-4 md:ml-6 space-y-8 sm:space-y-12 pb-4">
                 {educationData.map((item, index) => (
                     <motion.div
                         key={index}
@@ -52,11 +52,11 @@ export default function Education() {
                             <div className="w-2 h-2 bg-white rounded-full" />
                         </div>
 
-                        <div className="bg-zinc-900/40 hover:bg-zinc-900/60 transition-colors border border-white/5 p-6 md:p-8 rounded-2xl group">
-                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+                        <div className="bg-zinc-900/40 hover:bg-zinc-900/60 transition-colors border border-white/5 p-5 md:p-8 rounded-xl md:rounded-2xl group">
+                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
                                 <div>
-                                    <h3 className="text-2xl font-bold text-white group-hover:text-accent transition-colors">{item.degree}</h3>
-                                    <p className="text-lg text-gray-400 mt-1">{item.institution}</p>
+                                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-accent transition-colors">{item.degree}</h3>
+                                    <p className="text-base sm:text-lg text-gray-400 mt-1">{item.institution}</p>
                                 </div>
                                 <div className="flex flex-col items-start md:items-end">
                                     <span className="text-sm font-mono text-gray-500 bg-white/5 px-3 py-1 rounded-full border border-white/10 mb-2">

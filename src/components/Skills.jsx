@@ -31,12 +31,12 @@ export default function Skills() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mb-8"
+                className="mb-6 sm:mb-8"
             >
-                <h2 className="text-4xl lg:text-5xl font-bold tracking-tighter mb-2 text-accent"><span className="text-zinc-600">MY</span> SKILLS</h2>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold tracking-tighter mb-2 sm:mb-4 text-accent"><span className="text-zinc-600">MY</span> SKILLS</h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 {skillCategories.map((category, idx) => (
                     <motion.div
                         key={idx}
@@ -44,13 +44,13 @@ export default function Skills() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
-                        className="bg-zinc-900/40 border border-white/5 p-6 rounded-2xl hover:border-white/20 transition-colors"
+                        className="bg-zinc-900/40 border border-white/5 p-5 sm:p-6 rounded-xl sm:rounded-2xl hover:border-white/20 transition-colors"
                     >
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
                             <div className="bg-black p-2 rounded-lg border border-white/10">
                                 {category.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-white tracking-tight">{category.title}</h3>
+                            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">{category.title}</h3>
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {category.skills.map((skill, sIdx) => (

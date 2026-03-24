@@ -23,12 +23,12 @@ export default function Experience() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-8"
+                    className="mb-6 sm:mb-8"
                 >
-                    <h2 className="text-4xl lg:text-5xl font-bold tracking-tighter mb-2 text-accent"><span className="text-zinc-600">MY</span> EXPERIENCE</h2>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold tracking-tighter mb-2 sm:mb-4 text-accent"><span className="text-zinc-600">MY</span> EXPERIENCE</h2>
                 </motion.div>
 
-                <div className="space-y-12">
+                <div className="space-y-8 sm:space-y-12">
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={index}
@@ -36,17 +36,17 @@ export default function Experience() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 p-8 rounded-2xl group hover:border-white/20 transition-colors relative overflow-hidden"
+                            className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 p-5 sm:p-8 rounded-xl sm:rounded-2xl group hover:border-white/20 transition-colors relative overflow-hidden"
                         >
-                            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <Briefcase className="w-24 h-24" />
+                            <div className="absolute top-0 right-0 p-4 sm:p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <Briefcase className="w-16 h-16 sm:w-24 sm:h-24" />
                             </div>
 
                             <div className="relative z-10">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                                     <div>
-                                        <h3 className="text-2xl font-bold text-white group-hover:text-accent transition-colors">{exp.role}</h3>
-                                        <p className="text-xl text-gray-400">{exp.company}</p>
+                                        <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-accent transition-colors">{exp.role}</h3>
+                                        <p className="text-lg sm:text-xl text-gray-400">{exp.company}</p>
                                     </div>
                                     <span className="text-sm font-mono text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10 w-fit">
                                         {exp.period}

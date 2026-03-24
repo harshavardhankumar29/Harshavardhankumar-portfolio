@@ -48,7 +48,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 sm:py-3 backdrop-blur-xl bg-[#111]/80 border border-white/10 rounded-full shadow-2xl w-max max-w-[calc(100vw-2rem)] overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 sm:py-3 backdrop-blur-xl bg-[#111]/80 border border-white/10 rounded-full shadow-2xl w-max max-w-[calc(100vw-1rem)] sm:max-w-[calc(100vw-2rem)] overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
             {navItems.map((item) => {
                 const Icon = item.icon;

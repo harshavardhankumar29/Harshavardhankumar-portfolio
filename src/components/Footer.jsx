@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
-        <footer className="py-8 px-6 md:px-12 border-t border-white/10 bg-black relative z-10">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-400 font-mono text-center md:text-left">
+        <footer className="py-6 sm:py-8 px-4 sm:px-6 md:px-12 border-t border-white/10 bg-black relative z-10 w-full overflow-hidden">
+            <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-400 font-mono text-center md:text-left">
 
                 <div className="flex flex-col sm:flex-row gap-4">
                     <span>© 2026 Harsha Vardhan Kumar</span>

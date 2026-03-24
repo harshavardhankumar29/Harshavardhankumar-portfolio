@@ -50,10 +50,10 @@ function ProjectCard({ project, index }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group relative flex flex-col md:flex-row gap-6 p-4 rounded-3xl bg-[#0a0a0a] hover:bg-[#151515] transition-colors duration-500 border border-white/5 hover:border-white/10 cursor-pointer overflow-hidden focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
+            className="group relative flex flex-col md:flex-row gap-4 sm:gap-6 p-3 sm:p-4 rounded-2xl sm:rounded-3xl bg-[#0a0a0a] hover:bg-[#151515] transition-colors duration-500 border border-white/5 hover:border-white/10 cursor-pointer overflow-hidden focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
         >
             {/* Thumbnail / Graphic Background */}
-            <div className="w-full md:w-1/3 aspect-video md:aspect-[3/4] lg:aspect-video rounded-2xl overflow-hidden relative border border-white/5 bg-black z-10 group-hover:border-white/10 transition-colors">
+            <div className="w-full md:w-1/3 aspect-video md:aspect-[3/4] lg:aspect-video rounded-xl sm:rounded-2xl overflow-hidden relative border border-white/5 bg-black z-10 group-hover:border-white/10 transition-colors">
                 {project.image && (
                     <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" />
                 )}
@@ -67,11 +67,11 @@ function ProjectCard({ project, index }) {
                     <ArrowUpRight className="w-6 h-6" />
                  </div>
 
-                 <span className="text-xs font-mono text-gray-500 mb-2">0{index + 1} · {project.year}</span>
-                 <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 group-hover:text-white transition-colors duration-300">
+                 <span className="text-xs font-mono text-gray-500 mb-1 sm:mb-2">0{index + 1} · {project.year}</span>
+                 <h3 className="text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl font-bold text-white mb-1 sm:mb-2 group-hover:text-white transition-colors duration-300">
                      {project.title}
                  </h3>
-                 <p className="text-sm font-mono text-gray-400 mb-4">{project.category}</p>
+                 <p className="text-xs sm:text-sm font-mono text-gray-400 mb-2 sm:mb-4">{project.category}</p>
                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-sm md:text-base leading-relaxed max-w-xl mb-6">
                      {project.description}
                  </p>
@@ -93,14 +93,14 @@ export default function Work() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mb-8"
+                className="mb-6 sm:mb-8"
             >
-                <h2 className="text-4xl lg:text-5xl font-bold tracking-tighter mb-2 text-accent">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold tracking-tighter mb-2 sm:mb-4 text-accent">
                     <span className="text-zinc-600">RECENT</span> PROJECTS
                 </h2>
             </motion.div>
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 sm:gap-6">
                 {projects.map((project, index) => (
                     <ProjectCard key={index} project={project} index={index} />
                 ))}

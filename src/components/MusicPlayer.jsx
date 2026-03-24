@@ -68,7 +68,7 @@ export default function MusicPlayer() {
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`fixed bottom-6 left-6 z-50 transition-all duration-300 ${isMinimized ? 'w-12 h-12' : 'w-[calc(100vw-3rem)] sm:w-80'}`}
+            className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 transition-all duration-300 ${isMinimized ? 'w-10 h-10 sm:w-12 sm:h-12' : 'w-[calc(100vw-2rem)] sm:w-80'}`}
         >
             <div className="relative bg-black/40 backdrop-blur-xl border border-white/10 rounded-full overflow-hidden shadow-2xl ring-1 ring-white/5">
 
@@ -91,7 +91,7 @@ export default function MusicPlayer() {
                     </button>
                 ) : (
                     /* Expanded View */
-                    <div className="flex items-center p-3 gap-4">
+                    <div className="flex items-center p-2 sm:p-3 gap-2 sm:gap-4">
 
                         {/* Album Art / Visualizer */}
                         <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shrink-0">

@@ -45,10 +45,10 @@ export default function Certifications() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mb-8 flex justify-between items-end"
+                className="mb-6 sm:mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4"
             >
                 <div>
-                    <h2 className="text-4xl lg:text-5xl font-bold tracking-tighter mb-2 text-accent"><span className="text-zinc-600">MY</span> CERTIFICATIONS</h2>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold tracking-tighter mb-1 sm:mb-2 text-accent"><span className="text-zinc-600">MY</span> CERTIFICATIONS</h2>
                 </div>
                 
                 {/* Carousel Controls */}
@@ -71,7 +71,7 @@ export default function Certifications() {
             {/* Carousel Track */}
             <div 
                 ref={scrollRef}
-                className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-1"
+                className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-6 sm:pb-8 pt-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-1"
             >
                 {certifications.map((cert, index) => (
                     <motion.div
@@ -81,9 +81,9 @@ export default function Certifications() {
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
                         onClick={() => setSelectedCert(cert)}
-                        className="group flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[400px] snap-start bg-zinc-900/40 border border-white/5 rounded-2xl overflow-hidden hover:border-white/20 transition-all shadow-xl cursor-pointer"
+                        className="group flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[400px] snap-start bg-zinc-900/40 border border-white/5 rounded-xl sm:rounded-2xl overflow-hidden hover:border-white/20 transition-all shadow-xl cursor-pointer"
                     >
-                        <div className="relative h-48 overflow-hidden bg-black flex items-center justify-center">
+                        <div className="relative h-40 sm:h-48 overflow-hidden bg-black flex items-center justify-center">
                             {cert.image ? (
                                 <img 
                                     src={cert.image} 
@@ -96,9 +96,9 @@ export default function Certifications() {
                             <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/90 to-transparent" />
                         </div>
                         
-                        <div className="p-6 relative">
+                        <div className="p-4 sm:p-6 relative">
                             <div className="flex justify-between items-start mb-2">
-                                <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors pr-4 h-14 md:h-12">
+                                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-accent transition-colors pr-2 sm:pr-4 h-14 md:h-12">
                                     {cert.title}
                                 </h3>
                                 <button 

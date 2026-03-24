@@ -40,10 +40,10 @@ function App() {
         <MusicPlayer />
         <SplineBackground />
         <Navbar />
-        <main className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-[5%] pt-32 px-6 lg:px-12 relative z-10 pb-32">
+        <main className="max-w-7xl 2xl:max-w-[90rem] mx-auto flex flex-col lg:flex-row gap-8 lg:gap-[5%] pt-24 sm:pt-32 px-4 sm:px-6 lg:px-12 relative z-10 pb-24 sm:pb-32">
           {/* Left Sidebar */}
-          <div className="w-full lg:w-1/3 xl:w-1/4">
-             <div className="sticky top-32">
+          <div className="w-full lg:w-1/3 xl:w-1/4 2xl:w-1/5 shrink-0">
+             <div className="sticky top-24 sm:top-32 max-h-[calc(100vh-6rem)] sm:max-h-[calc(100vh-8rem)] overflow-y-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-track]:bg-transparent hover:[&::-webkit-scrollbar-thumb]:bg-white/20 pb-4 pr-1">
                  <ProfileSidebar />
              </div>
           </div>

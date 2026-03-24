@@ -11,8 +11,6 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@splinetool/react-spline": "^4.1.0",
-    "@splinetool/runtime": "^1.12.46",
     "@tailwindcss/postcss": "^4.1.18",
     "cmdk": "^1.1.1",
     "framer-motion": "^12.29.2",
